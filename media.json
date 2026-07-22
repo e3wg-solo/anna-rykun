@@ -1,0 +1,114 @@
+{
+  "works": {
+    "borgo": [
+      "/works/borgo-1.jpg",
+      "/works/borgo-2.jpg",
+      "/works/borgo-3.jpg"
+    ],
+    "florence": [
+      "/works/florence-1.jpg",
+      "/works/florence-2.jpg",
+      "/works/florence-3.jpg",
+      "/works/florence-4.jpg",
+      "/works/florence-5.jpg"
+    ],
+    "camogli": [
+      "/works/camogli-1.jpg",
+      "/works/camogli-2.jpg"
+    ],
+    "georgia": [
+      "/works/georgia-1.jpg",
+      "/works/georgia-2.jpg",
+      "/works/georgia-3.jpg"
+    ],
+    "cranes": [
+      "/works/cranes-1.jpg",
+      "/works/cranes-2.jpg",
+      "/works/cranes-3.jpg",
+      "/works/cranes-4.jpg"
+    ],
+    "alice": [
+      "/works/alice-1.jpg",
+      "/works/alice-2.jpg",
+      "/works/alice-3.jpg"
+    ],
+    "fast-furious": [
+      "/works/fast-furious-1.jpg",
+      "/works/fast-furious-2.jpg"
+    ],
+    "golden-falls": [
+      "/works/golden-falls-1.jpg",
+      "/works/golden-falls-2.jpg"
+    ],
+    "acrylic-composition": [
+      "/works/acrylic-composition-1.jpg",
+      "/works/acrylic-composition-2.jpg",
+      "/works/acrylic-composition-3.jpg"
+    ],
+    "caucasian-tapestry": [
+      "/works/caucasian-tapestry-1.jpg"
+    ],
+    "moms-image": [
+      "/works/moms-image-1.jpg"
+    ],
+    "kobe-bryant": [
+      "/works/kobe-bryant-1.jpg"
+    ]
+  },
+  "academic": {
+    "model-head": [
+      "/academic/model-head-1.jpg"
+    ],
+    "academic-works": [
+      "/academic/academic-works-1.jpg"
+    ],
+    "model-hands": [
+      "/academic/model-hands-1.jpg"
+    ],
+    "grenades": [
+      "/academic/grenades-1.jpg",
+      "/academic/grenades-2.jpg"
+    ]
+  },
+  "students": [
+    "/students/student-1.jpg",
+    "/students/student-2.jpg",
+    "/students/student-3.jpg",
+    "/students/student-4.jpg",
+    "/students/student-5.jpg",
+    "/students/student-6.jpg",
+    "/students/student-7.jpg"
+  ],
+  "projects": {
+    "english-through-art": [
+      "/projects/eta-1.png",
+      "/projects/eta-2.png",
+      "/projects/eta-3.png",
+      "/projects/eta-4.png"
+    ],
+    "english-through-art-mobile": [
+      "/projects/eta-mobile-1.png"
+    ]
+  },
+  "certificates": {
+    "feradiz": [
+      "/certificates/feradiz-1.jpg",
+      "/certificates/feradiz-2.jpg"
+    ],
+    "professional-orientation": [
+      "/certificates/professional-orientation-1.jpg",
+      "/certificates/professional-orientation-2.jpg"
+    ],
+    "employment-record": [
+      "/certificates/employment-record-1.jpg"
+    ],
+    "italian": [
+      "/certificates/italian-1.jpg"
+    ],
+    "safeguarding": [
+      "/certificates/safeguarding-1.pdf",
+      "/certificates/safeguarding-2.pdf"
+    ]
+  },
+  "portrait": "/portrait.jpg"
+}
