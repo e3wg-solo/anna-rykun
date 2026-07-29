@@ -64,6 +64,6 @@ export const ETA_DESKTOP: string[] = media.projects['english-through-art']
 export const ETA_MOBILE: string[] = media.projects['english-through-art-mobile']
 
 export const CONTACT = {
-  email: 'hello@annarykun.art',
+  email: 'anyarichie@gmail.com',
   instagram: 'https://instagram.com/',
 }
