@@ -231,6 +231,11 @@ export const it: Dict = {
     title: 'Certificati e premi',
     lead: 'Documenti professionali, risultati di concorsi e qualifiche.',
     items: {
+      'ba-diploma': {
+        title: 'Supplemento europeo al diploma — Laurea',
+        body: 'Laurea in Scienze dell’educazione, con specializzazione in Belle Arti e Lingua inglese · 300 crediti.',
+        year: '2026',
+      },
       feradiz: { title: 'Festival del Design Russo «FERADIZ-2025»', body: 'Primo Premio nella Pittura da cavalletto.', year: '2025' },
       'professional-orientation': {
         title: '17° Programma Panrusso',

@@ -91,6 +91,10 @@
     ]
   },
   "certificates": {
+    "ba-diploma": [
+      "/certificates/ba-diploma-supplement-preview.jpg",
+      "/certificates/ba-diploma-supplement.pdf"
+    ],
     "feradiz": [
       "/certificates/feradiz-1.jpg",
       "/certificates/feradiz-2.jpg"

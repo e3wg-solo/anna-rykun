@@ -51,6 +51,11 @@ export interface CertItem {
 }
 
 export const CERT_ITEMS: CertItem[] = [
+  {
+    slug: 'ba-diploma',
+    images: [certs['ba-diploma'][0]],
+    pdfs: [certs['ba-diploma'][1]],
+  },
   { slug: 'feradiz', images: certs.feradiz, pdfs: [] },
   { slug: 'professional-orientation', images: certs['professional-orientation'], pdfs: [] },
   { slug: 'italian', images: certs.italian, pdfs: [] },

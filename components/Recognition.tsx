@@ -12,11 +12,12 @@ import { Lightbox } from './Lightbox'
 import type { LightboxItem } from './Lightbox'
 
 const SPANS: Record<string, string> = {
-  feradiz: 'lg:col-span-7',
-  'professional-orientation': 'lg:col-span-5',
-  italian: 'lg:col-span-4',
-  'employment-record': 'lg:col-span-4',
-  safeguarding: 'lg:col-span-4',
+  'ba-diploma': 'lg:col-span-7',
+  feradiz: 'lg:col-span-5',
+  'professional-orientation': 'lg:col-span-3',
+  italian: 'lg:col-span-3',
+  'employment-record': 'lg:col-span-3',
+  safeguarding: 'lg:col-span-3',
 }
 
 export function Recognition() {

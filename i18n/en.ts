@@ -229,6 +229,11 @@ export const en: Dict = {
     title: 'Certificates & awards',
     lead: 'Professional records, competition results, and qualifications.',
     items: {
+      'ba-diploma': {
+        title: 'European Diploma Supplement — BA',
+        body: 'Bachelor’s degree in Pedagogical Education, specialising in Fine Arts and English Language · 300 credits.',
+        year: '2026',
+      },
       feradiz: { title: "Festival of Russian Design “FERADIZ-2025”", body: 'First Prize in Easel Painting.', year: '2025' },
       'professional-orientation': {
         title: '17th All-Russia Program',
