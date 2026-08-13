@@ -17,7 +17,7 @@ export function Projects() {
 
   return (
     <section id="projects" className="mx-auto max-w-[1400px] px-5 py-20 sm:px-8 sm:py-28 md:py-36">
-      <SectionHeading index="05" eyebrow={p.eyebrow} title={p.title} lead={p.lead} className="max-w-3xl" />
+      <SectionHeading index="06" eyebrow={p.eyebrow} title={p.title} lead={p.lead} className="max-w-3xl" />
 
       {/* English Through Art — feature */}
       <div className="mt-16 grid items-center gap-10 lg:mt-24 lg:grid-cols-2 lg:gap-16">

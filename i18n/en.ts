@@ -6,6 +6,7 @@ export const en: Dict = {
   nav: {
     about: 'About',
     work: 'Work',
+    fashion: 'Fashion',
     projects: 'Projects',
     teaching: 'Teaching',
     recognition: 'Recognition',
@@ -178,6 +179,76 @@ export const en: Dict = {
     next: 'Next',
   },
 
+  fashion: {
+    eyebrow: 'Art × Fashion',
+    title: 'I create the visual language that makes fashion seen.',
+    lead: 'Four fashion stories connected through colour, texture, atmosphere and artistic research — each with its own material identity.',
+    intro: [
+      "I've always been interested in the space where art and fashion meet. For me, fashion is not only about the garment: it's about how the garment is perceived.",
+      'Growing up, I watched my mother, a professional womenswear outerwear designer and pattern maker, create garments from construction to finished piece. That gave me an early understanding of clothing as a physical object: proportions, materials, details, craftsmanship and character.',
+      'My own background is in fine art, colour theory, composition and visual research. I bring this into fashion by looking beyond the garment — asking what makes it desirable, what deserves attention, and how its strongest qualities can be shown.',
+      'I develop visual concepts around existing fashion pieces: researching their character, building colour and moodboard systems, creating styling directions, photographing details and developing editorial imagery. AI is one of my tools, but the concept comes first.',
+      'The four pieces here share one visual language. I developed a common colour palette to connect different garments through colour, texture, atmosphere and artistic references, while each piece keeps its own identity.',
+      'My role is translating design into perception: finding the right image, composition, colour and context to make a product feel distinctive, desirable and commercially relevant.',
+    ],
+    statement: "I don't design the garment. I design how it is seen.",
+    projectsLabel: 'Selected fashion stories',
+    roleLabel: 'My role',
+    openProject: 'Open complete visual story',
+    frames: 'frames',
+    colourTitle: 'One visual language',
+    colourBody: 'A shared colour system connects all four garments, moving between deep navy, carmine, muted blue, antique gold, warm neutrals and botanical greys.',
+    items: {
+      'grey-botanical-cloak': {
+        title: 'Grey Botanical Cloak',
+        category: 'Fashion Visual Storytelling · Visual Art Direction',
+        dek: 'A handcrafted outerwear piece translated into a refined, commercially oriented fashion story.',
+        body: [
+          'A handcrafted outerwear piece created by a professional womenswear outerwear designer and pattern maker. Inspired by the garment, I developed a complete visual concept to present it as a refined, commercially oriented fashion product.',
+          'I independently photographed the garment and its details with a Sony camera, studied its construction, fabric, colour, texture and distinctive elements, and developed a visual research board around its character.',
+          'Drawing on my background in fine art, colour theory and composition, I created the colour palette, styling combinations, moodboard and overall visual direction. I then developed AI-assisted fashion imagery to explore the garment within a luxury editorial context.',
+          'The final result connects the physical garment, art direction, material research, colour, styling, photography and AI visualisation — strengthening its commercial image and exploring its potential for future fashion communication and sales.',
+        ],
+        role: 'Visual Art Direction · Fashion Visual Storytelling · Product Photography · Visual Research · Moodboard Development · Colour Direction · Styling · AI Creative Direction · Editorial Presentation',
+      },
+      'ikat-harmony': {
+        title: 'Ikat Harmony',
+        category: 'Fashion Visual Storytelling · Art Direction',
+        dek: 'A vivid ikat blouse shaped into a contemporary story of handwoven heritage and modern femininity.',
+        body: [
+          'The visual concept begins with the garment’s saturated ikat rhythm: carmine, pink, orange, indigo and green held together by a soft ivory ground. I studied its silhouette, curved yoke, piping, natural buttons and gathered construction as the foundation of the story.',
+          'I developed a warm editorial direction around desert light, tactile craft and relaxed contemporary styling. The colour palette, material studies, fashion illustration and technical drawing create a complete visual system around the original piece.',
+          'AI-assisted imagery extends the photographed garment into an editorial context while preserving its distinctive pattern and construction. The result connects heritage textile, product detail, styling and commercial image-making.',
+        ],
+        role: 'Visual Art Direction · Fashion Visual Storytelling · Product Photography · Visual Research · Moodboard Development · Colour Direction · Styling · AI Creative Direction · Editorial Presentation',
+      },
+      'floral-heritage-vest': {
+        title: 'Floral Heritage Vest',
+        category: 'Fashion Visual Storytelling · Art Direction',
+        dek: 'A decorative floral textile reframed through soft boho styling, ornament and natural texture.',
+        body: [
+          'A handcrafted vest featuring a floral decorative textile, developed into a contemporary fashion concept with a soft boho aesthetic and a strong focus on colour, ornament and texture.',
+          'I photographed the original garment and studied its silhouette, construction, floral pattern, fabric, trim and hardware. I then developed a visual research direction around floral ornament, decorative art, natural textures and contemporary fashion.',
+          'Drawing on my background in fine art, colour theory and composition, I created the moodboard, colour palette and styling concept, including the selection of boho-inspired jewellery and accessories to complement the garment.',
+          'The final presentation brings together product photography, visual research, styling, colour direction and AI visualisation to create a cohesive fashion story around the original piece.',
+        ],
+        role: 'Visual Art Direction · Fashion Visual Storytelling · Product Photography · Visual Research · Moodboard Development · Colour Direction · Styling & Accessory Curation · AI Creative Direction · Editorial Presentation',
+      },
+      'modern-heritage-tweed-vest': {
+        title: 'Modern Heritage Tweed Vest',
+        category: 'Fashion Visual Storytelling · Art Direction',
+        dek: 'A handcrafted tweed vest explored through textile research, saturated colour and contemporary fine-art references.',
+        body: [
+          'A handcrafted tweed vest developed into a contemporary luxury fashion concept through textile research, colour and visual storytelling.',
+          'The project began with the distinctive character of the garment: a deep navy structure framing a richly textured red, white and blue tweed, finished with gold braid, sculptural pockets and graphic metal fastenings.',
+          'For the moodboard, I brought together tweed craftsmanship, architectural forms, material studies and colour-field painting, including a Rothko reference. His use of saturated colour informed the palette and atmospheric direction, connecting the garment with contemporary fine-art thinking.',
+          'The final presentation transforms the vest into a distinctive visual object with its own colour, texture and material identity, combining product photography, art direction, moodboarding and editorial presentation.',
+        ],
+        role: 'Visual Art Direction · Fashion Visual Storytelling · Product Photography · Visual Research · Moodboard Development · Colour Direction · Styling · AI Creative Direction · Editorial Presentation',
+      },
+    },
+  },
+
   projects: {
     eyebrow: 'Projects',
     title: 'Educational & creative projects',
@@ -285,7 +356,7 @@ export type Dict = {
   code: string
   langName: string
   dir: 'ltr' | 'rtl'
-  nav: Record<'about' | 'work' | 'projects' | 'teaching' | 'recognition' | 'contact' | 'menu' | 'close', string>
+  nav: Record<'about' | 'work' | 'fashion' | 'projects' | 'teaching' | 'recognition' | 'contact' | 'menu' | 'close', string>
   hero: {
     eyebrow: string
     greeting: string
@@ -346,6 +417,26 @@ export type Dict = {
     close: string
     prev: string
     next: string
+  }
+  fashion: {
+    eyebrow: string
+    title: string
+    lead: string
+    intro: string[]
+    statement: string
+    projectsLabel: string
+    roleLabel: string
+    openProject: string
+    frames: string
+    colourTitle: string
+    colourBody: string
+    items: Record<string, {
+      title: string
+      category: string
+      dek: string
+      body: string[]
+      role: string
+    }>
   }
   projects: {
     eyebrow: string

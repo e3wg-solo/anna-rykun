@@ -9,7 +9,7 @@ import { EASE } from '../lib/motion'
 import { LanguageSwitcher } from './LanguageSwitcher'
 import { Magnetic } from './ui/Magnetic'
 
-const LINK_IDS = ['about', 'work', 'projects', 'teaching', 'recognition', 'contact'] as const
+const LINK_IDS = ['about', 'work', 'fashion', 'projects', 'teaching', 'recognition', 'contact'] as const
 
 export function Nav() {
   const { t } = useI18n()

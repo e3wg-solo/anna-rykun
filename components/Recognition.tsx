@@ -27,7 +27,7 @@ export function Recognition() {
   return (
     <section id="recognition" className="mx-auto max-w-[1400px] px-5 py-20 sm:px-8 sm:py-28 md:py-36">
       <SectionHeading
-        index="07"
+        index="08"
         eyebrow={t.recognition.eyebrow}
         title={t.recognition.title}
         lead={t.recognition.lead}

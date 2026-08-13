@@ -8,6 +8,7 @@ export const it: Dict = {
   nav: {
     about: 'Chi sono',
     work: 'Opere',
+    fashion: 'Moda',
     projects: 'Progetti',
     teaching: 'Insegnamento',
     recognition: 'Riconoscimenti',
@@ -178,6 +179,76 @@ export const it: Dict = {
     close: 'Chiudi',
     prev: 'Precedente',
     next: 'Successiva',
+  },
+
+  fashion: {
+    eyebrow: 'Arte × Moda',
+    title: 'Creo il linguaggio visivo che rende visibile la moda.',
+    lead: 'Quattro storie di moda unite da colore, materia, atmosfera e ricerca artistica — ognuna con una propria identità.',
+    intro: [
+      'Mi ha sempre affascinato lo spazio in cui arte e moda si incontrano. Per me la moda non riguarda soltanto il capo, ma il modo in cui viene percepito.',
+      'Crescendo, ho osservato mia madre, designer professionista di capispalla da donna e modellista, creare gli abiti dalla costruzione al pezzo finito. Ho così sviluppato presto una comprensione dell’abito come oggetto fisico: proporzioni, materiali, dettagli, lavorazione e carattere.',
+      'La mia formazione è nelle belle arti, nella teoria del colore, nella composizione e nella ricerca visiva. Porto tutto questo nella moda guardando oltre il capo — chiedendomi cosa lo renda desiderabile, cosa meriti attenzione e come mostrarne le qualità più forti.',
+      'Sviluppo concetti visivi intorno a capi esistenti: ne ricerco il carattere, costruisco sistemi cromatici e moodboard, creo direzioni di styling, fotografo i dettagli e sviluppo immagini editoriali. L’IA è uno dei miei strumenti, ma il concetto viene prima.',
+      'I quattro capi condividono un unico linguaggio visivo. Ho sviluppato una palette comune per collegarli attraverso colore, texture, atmosfera e riferimenti artistici, lasciando a ciascuno la propria identità.',
+      'Il mio ruolo è tradurre il design in percezione: trovare l’immagine, la composizione, il colore e il contesto giusti affinché un prodotto risulti distintivo, desiderabile e commercialmente rilevante.',
+    ],
+    statement: 'Non disegno il capo. Disegno il modo in cui viene visto.',
+    projectsLabel: 'Storie di moda selezionate',
+    roleLabel: 'Il mio ruolo',
+    openProject: 'Apri la storia visiva completa',
+    frames: 'immagini',
+    colourTitle: 'Un unico linguaggio visivo',
+    colourBody: 'Un sistema cromatico comune collega i quattro capi, muovendosi tra blu notte, carminio, azzurri attenuati, oro antico, neutri caldi e grigi botanici.',
+    items: {
+      'grey-botanical-cloak': {
+        title: 'Mantello botanico grigio',
+        category: 'Narrazione visiva di moda · Direzione artistica',
+        dek: 'Un capospalla artigianale tradotto in una storia di moda raffinata e orientata al mercato.',
+        body: [
+          'Un capospalla artigianale creato da una designer professionista di capispalla da donna e modellista. Ispirata dal capo, ho sviluppato un concetto visivo completo per presentarlo come prodotto di moda raffinato e commercialmente orientato.',
+          'Ho fotografato autonomamente il capo e i suoi dettagli con una fotocamera Sony, studiandone costruzione, tessuto, colore, texture ed elementi distintivi, per poi sviluppare una ricerca visiva intorno al suo carattere.',
+          'Grazie alla mia formazione nelle belle arti, nella teoria del colore e nella composizione, ho creato palette, combinazioni di styling, moodboard e direzione visiva complessiva. Ho quindi sviluppato immagini di moda assistite dall’IA per esplorare il capo in un contesto editoriale di lusso.',
+          'Il risultato collega capo fisico, direzione artistica, ricerca sui materiali, colore, styling, fotografia e visualizzazione IA — rafforzandone l’immagine commerciale e il potenziale per la comunicazione e la vendita.',
+        ],
+        role: 'Direzione artistica · Narrazione visiva di moda · Fotografia di prodotto · Ricerca visiva · Sviluppo moodboard · Direzione colore · Styling · Direzione creativa IA · Presentazione editoriale',
+      },
+      'ikat-harmony': {
+        title: 'Ikat Harmony',
+        category: 'Narrazione visiva di moda · Direzione artistica',
+        dek: 'Una blusa ikat vibrante trasformata in una storia contemporanea di tradizione tessile e femminilità moderna.',
+        body: [
+          'Il concetto visivo nasce dal ritmo saturo dell’ikat: carminio, rosa, arancio, indaco e verde su un fondo avorio. Ho studiato silhouette, carré curvo, profili, bottoni naturali e costruzione arricciata come base della storia.',
+          'Ho sviluppato una direzione editoriale calda intorno alla luce del deserto, alla manualità e a uno styling contemporaneo rilassato. Palette, studi materici, illustrazione di moda e disegno tecnico costruiscono un sistema visivo completo intorno al capo originale.',
+          'Le immagini assistite dall’IA ampliano il capo fotografato in un contesto editoriale preservandone motivo e costruzione. Il risultato unisce tessile tradizionale, dettaglio di prodotto, styling e immagine commerciale.',
+        ],
+        role: 'Direzione artistica · Narrazione visiva di moda · Fotografia di prodotto · Ricerca visiva · Sviluppo moodboard · Direzione colore · Styling · Direzione creativa IA · Presentazione editoriale',
+      },
+      'floral-heritage-vest': {
+        title: 'Gilet Floral Heritage',
+        category: 'Narrazione visiva di moda · Direzione artistica',
+        dek: 'Un tessuto floreale decorativo reinterpretato attraverso styling boho, ornamento e texture naturali.',
+        body: [
+          'Un gilet artigianale in tessuto floreale decorativo, sviluppato in un concetto di moda contemporaneo dall’estetica boho delicata e con una forte attenzione a colore, ornamento e texture.',
+          'Ho fotografato il capo originale e ne ho studiato silhouette, costruzione, motivo floreale, tessuto, finiture e accessori. Ho quindi sviluppato una direzione di ricerca intorno a ornamento floreale, arti decorative, texture naturali e moda contemporanea.',
+          'A partire dalla mia formazione artistica ho creato moodboard, palette e concept di styling, selezionando gioielli e accessori d’ispirazione boho per completare il capo.',
+          'La presentazione finale riunisce fotografia di prodotto, ricerca visiva, styling, direzione cromatica e visualizzazione IA in una storia coerente intorno al pezzo originale.',
+        ],
+        role: 'Direzione artistica · Narrazione visiva di moda · Fotografia di prodotto · Ricerca visiva · Sviluppo moodboard · Direzione colore · Styling e selezione accessori · Direzione creativa IA · Presentazione editoriale',
+      },
+      'modern-heritage-tweed-vest': {
+        title: 'Gilet Modern Heritage in tweed',
+        category: 'Narrazione visiva di moda · Direzione artistica',
+        dek: 'Un gilet artigianale in tweed esplorato attraverso ricerca tessile, colore saturo e riferimenti all’arte contemporanea.',
+        body: [
+          'Un gilet artigianale in tweed sviluppato in un concetto di moda contemporaneo di lusso attraverso ricerca tessile, colore e narrazione visiva.',
+          'Il progetto parte dal carattere distintivo del capo: una struttura blu notte incornicia un tweed rosso, bianco e blu, rifinito con passamaneria dorata, tasche scultoree e chiusure metalliche grafiche.',
+          'Per il moodboard ho accostato artigianato del tweed, forme architettoniche, studi materici e pittura color field, incluso un riferimento a Rothko. Il suo uso del colore saturo ha guidato palette e atmosfera, collegando il capo al pensiero artistico contemporaneo.',
+          'La presentazione finale trasforma il gilet in un oggetto visivo dalla propria identità cromatica, tattile e materica, unendo fotografia di prodotto, direzione artistica, moodboard e presentazione editoriale.',
+        ],
+        role: 'Direzione artistica · Narrazione visiva di moda · Fotografia di prodotto · Ricerca visiva · Sviluppo moodboard · Direzione colore · Styling · Direzione creativa IA · Presentazione editoriale',
+      },
+    },
   },
 
   projects: {

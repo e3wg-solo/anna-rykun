@@ -6,6 +6,7 @@ import { About } from '@/components/About'
 import { Philosophy } from '@/components/Philosophy'
 import { Skills } from '@/components/Skills'
 import { Gallery } from '@/components/Gallery'
+import { Fashion } from '@/components/Fashion'
 import { Projects } from '@/components/Projects'
 import { Teaching } from '@/components/Teaching'
 import { Recognition } from '@/components/Recognition'
@@ -24,6 +25,7 @@ export default function Home() {
         <Philosophy />
         <Skills />
         <Gallery />
+        <Fashion />
         <Projects />
         <Teaching />
         <Recognition />

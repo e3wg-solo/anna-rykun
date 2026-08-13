@@ -21,6 +21,7 @@ export interface WorkItem {
 const works = media.works as Record<string, string[]>
 const academic = media.academic as Record<string, string[]>
 const certs = media.certificates as Record<string, string[]>
+const fashion = media.fashion as Record<string, string[]>
 
 /** Curated order — alternating strong pieces and orientations for gallery rhythm. */
 export const WORKS: WorkItem[] = [
@@ -43,6 +44,20 @@ export const WORKS: WorkItem[] = [
 ]
 
 export const MEDIA_FILTERS: (Medium | 'all')[] = ['all', 'oil', 'acrylic', 'mixed', 'graphite', 'digital']
+
+export interface FashionItem {
+  slug: string
+  images: string[]
+}
+
+export const FASHION_ITEMS: FashionItem[] = [
+  { slug: 'grey-botanical-cloak', images: fashion['grey-botanical-cloak'] },
+  { slug: 'ikat-harmony', images: fashion['ikat-harmony'] },
+  { slug: 'floral-heritage-vest', images: fashion['floral-heritage-vest'] },
+  { slug: 'modern-heritage-tweed-vest', images: fashion['modern-heritage-tweed-vest'] },
+]
+
+export const FASHION_COLOUR_SYSTEM: string = fashion['colour-system'][0]
 
 export interface CertItem {
   slug: string

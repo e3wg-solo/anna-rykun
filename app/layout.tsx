@@ -37,9 +37,9 @@ const plexArabic = IBM_Plex_Sans_Arabic({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://annarykun.art'),
-  title: 'Anna Rykun — Art Educator & Visual Artist',
+  title: 'Anna Rykun — Visual Artist, Art Educator & Fashion Art Director',
   description:
-    'Portfolio of Anna Rykun — art educator and visual artist working in oil, acrylic and mixed media, bridging fine art, teaching and visual culture. Available in English, Arabic and Italian.',
+    'Portfolio of Anna Rykun — visual artist, art educator and fashion art director working across fine art, visual storytelling, colour, styling and creative education.',
   keywords: [
     'Anna Rykun',
     'art educator',
@@ -49,12 +49,14 @@ export const metadata: Metadata = {
     'CLIL',
     'art teacher',
     'portfolio',
+    'fashion art direction',
+    'fashion visual storytelling',
   ],
   authors: [{ name: 'Anna Rykun' }],
   openGraph: {
-    title: 'Anna Rykun — Art Educator & Visual Artist',
+    title: 'Anna Rykun — Visual Artist & Fashion Art Director',
     description:
-      'Fine art, art education and creative projects. Oil, acrylic and mixed-media works, CLIL teaching, and award-winning painting.',
+      'Fine art, fashion visual storytelling, art direction, creative education and award-winning painting.',
     type: 'website',
     images: ['/portrait.jpg'],
   },

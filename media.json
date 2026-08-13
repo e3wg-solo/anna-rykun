@@ -90,6 +90,48 @@
       "/projects/eta-mobile-1.png"
     ]
   },
+  "fashion": {
+    "grey-botanical-cloak": [
+      "/fashion/grey-botanical-cloak/visual-story-board.jpg",
+      "/fashion/grey-botanical-cloak/editorial-hero.jpg",
+      "/fashion/grey-botanical-cloak/editorial-styling.jpg",
+      "/fashion/grey-botanical-cloak/embroidery-detail.jpg",
+      "/fashion/grey-botanical-cloak/lining-fastening-detail.jpg",
+      "/fashion/grey-botanical-cloak/forest-back-story.jpg",
+      "/fashion/grey-botanical-cloak/product-front.jpg",
+      "/fashion/grey-botanical-cloak/neckline-study.jpg",
+      "/fashion/grey-botanical-cloak/editorial-back.jpg",
+      "/fashion/grey-botanical-cloak/styling-study.jpg",
+      "/fashion/grey-botanical-cloak/studio-look.jpg",
+      "/fashion/grey-botanical-cloak/textile-concept.jpg"
+    ],
+    "ikat-harmony": [
+      "/fashion/ikat-harmony/visual-story-board.jpg",
+      "/fashion/ikat-harmony/product-front.jpg",
+      "/fashion/ikat-harmony/desert-editorial.jpg",
+      "/fashion/ikat-harmony/craft-detail.jpg",
+      "/fashion/ikat-harmony/editorial-portrait.jpg"
+    ],
+    "floral-heritage-vest": [
+      "/fashion/floral-heritage-vest/visual-story-board.jpg",
+      "/fashion/floral-heritage-vest/floral-textile-detail.jpg",
+      "/fashion/floral-heritage-vest/garment-back.jpg",
+      "/fashion/floral-heritage-vest/editorial-portrait.jpg",
+      "/fashion/floral-heritage-vest/product-study.jpg"
+    ],
+    "modern-heritage-tweed-vest": [
+      "/fashion/modern-heritage-tweed-vest/visual-story-board.jpg",
+      "/fashion/modern-heritage-tweed-vest/original-garment.jpg",
+      "/fashion/modern-heritage-tweed-vest/button-detail.jpg",
+      "/fashion/modern-heritage-tweed-vest/neckline-detail.jpg",
+      "/fashion/modern-heritage-tweed-vest/lining-fastening-detail.jpg",
+      "/fashion/modern-heritage-tweed-vest/mannequin-study.jpg",
+      "/fashion/modern-heritage-tweed-vest/product-front.jpg"
+    ],
+    "colour-system": [
+      "/fashion/shared/colour-system.jpg"
+    ]
+  },
   "certificates": {
     "ba-diploma": [
       "/certificates/ba-diploma-supplement-preview.jpg",

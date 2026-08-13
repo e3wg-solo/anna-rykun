@@ -23,7 +23,7 @@ export function Teaching() {
     <section id="teaching" className="border-t border-line bg-paper-2/40">
       <div className="mx-auto max-w-[1400px] px-5 py-20 sm:px-8 sm:py-28 md:py-36">
         <SectionHeading
-          index="06"
+          index="07"
           eyebrow={t.teaching.eyebrow}
           title={t.teaching.title}
           lead={t.teaching.lead}
