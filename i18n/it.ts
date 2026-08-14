@@ -157,6 +157,20 @@ export const it: Dict = {
       graphite: 'Grafite',
       digital: 'Mano + digitale',
     },
+    groups: {
+      landscapes: {
+        title: 'Paesaggi e luoghi',
+        lead: 'Architettura e spazi aperti, dal blu saturo alla luce più morbida della Toscana.',
+      },
+      figurative: {
+        title: 'Narrazioni figurative',
+        lead: 'Ritratto, cinema e immagine digitale riuniti in una sequenza distinta.',
+      },
+      graphic: {
+        title: 'Grafica e studi accademici',
+        lead: 'Illustrazione e disegno dal vero presentati separatamente dalla pittura.',
+      },
+    },
     items: {
       florence: { title: 'Splendida Firenze', desc: 'Il Duomo che brilla nella foschia toscana — olio caldo su tela, 50 × 50 cm.' },
       borgo: { title: 'Borgo, Italia', desc: "Un borgo collinare sotto un cielo notturno vorticoso, dove la luce italiana incontra l'energia dell'acrilico." },
@@ -184,22 +198,18 @@ export const it: Dict = {
   fashion: {
     eyebrow: 'Arte × Moda',
     title: 'Creo il linguaggio visivo che rende visibile la moda.',
-    lead: 'Quattro storie di moda unite da colore, materia, atmosfera e ricerca artistica — ognuna con una propria identità.',
     intro: [
       'Mi ha sempre affascinato lo spazio in cui arte e moda si incontrano. Per me la moda non riguarda soltanto il capo, ma il modo in cui viene percepito.',
-      'Crescendo, ho osservato mia madre, designer professionista di capispalla da donna e modellista, creare gli abiti dalla costruzione al pezzo finito. Ho così sviluppato presto una comprensione dell’abito come oggetto fisico: proporzioni, materiali, dettagli, lavorazione e carattere.',
-      'La mia formazione è nelle belle arti, nella teoria del colore, nella composizione e nella ricerca visiva. Porto tutto questo nella moda guardando oltre il capo — chiedendomi cosa lo renda desiderabile, cosa meriti attenzione e come mostrarne le qualità più forti.',
-      'Sviluppo concetti visivi intorno a capi esistenti: ne ricerco il carattere, costruisco sistemi cromatici e moodboard, creo direzioni di styling, fotografo i dettagli e sviluppo immagini editoriali. L’IA è uno dei miei strumenti, ma il concetto viene prima.',
-      'I quattro capi condividono un unico linguaggio visivo. Ho sviluppato una palette comune per collegarli attraverso colore, texture, atmosfera e riferimenti artistici, lasciando a ciascuno la propria identità.',
-      'Il mio ruolo è tradurre il design in percezione: trovare l’immagine, la composizione, il colore e il contesto giusti affinché un prodotto risulti distintivo, desiderabile e commercialmente rilevante.',
+      'Crescendo, ho osservato mia madre, designer professionista di capispalla da donna e modellista, creare gli abiti dalla costruzione al pezzo finito. Ho così sviluppato presto una comprensione di proporzioni, materiali, dettagli, lavorazione e carattere.',
+      'La mia formazione è nelle belle arti, nella teoria del colore, nella composizione e nella ricerca visiva. La uso per studiare un capo, costruirne palette e moodboard, fotografarne i dettagli e definire una direzione editoriale. L’IA è uno dei miei strumenti; il concetto viene prima.',
     ],
-    statement: 'Non disegno il capo. Disegno il modo in cui viene visto.',
-    projectsLabel: 'Storie di moda selezionate',
+    introRole: 'Il mio ruolo è tradurre il design in percezione: trovare l’immagine, la composizione, il colore e il contesto giusti affinché un prodotto risulti distintivo, desiderabile e commercialmente rilevante.',
+    projectsLabel: 'Casi moda selezionati',
+    caseLabel: 'Caso',
     roleLabel: 'Il mio ruolo',
-    openProject: 'Apri la storia visiva completa',
+    openProject: 'Apri il caso studio',
+    readCase: 'Leggi le note del progetto',
     frames: 'immagini',
-    colourTitle: 'Un unico linguaggio visivo',
-    colourBody: 'Un sistema cromatico comune collega i quattro capi, muovendosi tra blu notte, carminio, azzurri attenuati, oro antico, neutri caldi e grigi botanici.',
     items: {
       'grey-botanical-cloak': {
         title: 'Mantello botanico grigio',

@@ -155,6 +155,20 @@ export const en: Dict = {
       graphite: 'Graphite',
       digital: 'Hand + digital',
     },
+    groups: {
+      landscapes: {
+        title: 'Landscapes & place',
+        lead: 'Architecture and open air, moving from saturated blue into softer Tuscan light.',
+      },
+      figurative: {
+        title: 'Figurative narratives',
+        lead: 'Portrait, cinema and digital image-making gathered as one distinct sequence.',
+      },
+      graphic: {
+        title: 'Graphic & academic studies',
+        lead: 'Illustration and observational drawing presented separately from the paintings.',
+      },
+    },
     items: {
       florence: { title: 'Gorgeous Florence', desc: 'The Duomo glowing through Tuscan haze — warm oil on canvas, 50 × 50 cm.' },
       borgo: { title: 'Borgo, Italy', desc: 'A hillside village beneath a swirling night sky, where Italian light meets acrylic energy.' },
@@ -182,22 +196,18 @@ export const en: Dict = {
   fashion: {
     eyebrow: 'Art × Fashion',
     title: 'I create the visual language that makes fashion seen.',
-    lead: 'Four fashion stories connected through colour, texture, atmosphere and artistic research — each with its own material identity.',
     intro: [
       "I've always been interested in the space where art and fashion meet. For me, fashion is not only about the garment: it's about how the garment is perceived.",
-      'Growing up, I watched my mother, a professional womenswear outerwear designer and pattern maker, create garments from construction to finished piece. That gave me an early understanding of clothing as a physical object: proportions, materials, details, craftsmanship and character.',
-      'My own background is in fine art, colour theory, composition and visual research. I bring this into fashion by looking beyond the garment — asking what makes it desirable, what deserves attention, and how its strongest qualities can be shown.',
-      'I develop visual concepts around existing fashion pieces: researching their character, building colour and moodboard systems, creating styling directions, photographing details and developing editorial imagery. AI is one of my tools, but the concept comes first.',
-      'The four pieces here share one visual language. I developed a common colour palette to connect different garments through colour, texture, atmosphere and artistic references, while each piece keeps its own identity.',
-      'My role is translating design into perception: finding the right image, composition, colour and context to make a product feel distinctive, desirable and commercially relevant.',
+      'Growing up, I watched my mother, a professional womenswear outerwear designer and pattern maker, create garments from construction to finished piece. That gave me an early understanding of proportions, materials, details, craftsmanship and character.',
+      'My background is in fine art, colour theory, composition and visual research. I use it to research a garment, build its palette and moodboard, photograph details and shape an editorial direction. AI is one of my tools; the concept comes first.',
     ],
-    statement: "I don't design the garment. I design how it is seen.",
-    projectsLabel: 'Selected fashion stories',
+    introRole: 'My role is translating design into perception: finding the right image, composition, colour and context to make a product feel distinctive, desirable and commercially relevant.',
+    projectsLabel: 'Selected fashion cases',
+    caseLabel: 'Case',
     roleLabel: 'My role',
-    openProject: 'Open complete visual story',
+    openProject: 'Open case study',
+    readCase: 'Read the project notes',
     frames: 'frames',
-    colourTitle: 'One visual language',
-    colourBody: 'A shared colour system connects all four garments, moving between deep navy, carmine, muted blue, antique gold, warm neutrals and botanical greys.',
     items: {
       'grey-botanical-cloak': {
         title: 'Grey Botanical Cloak',
@@ -412,6 +422,7 @@ export type Dict = {
     lead: string
     filters: Record<'all' | 'oil' | 'acrylic' | 'mixed' | 'graphite' | 'digital', string>
     mediumLabels: Record<'oil' | 'acrylic' | 'mixed' | 'graphite' | 'digital', string>
+    groups: Record<'landscapes' | 'figurative' | 'graphic', { title: string; lead: string }>
     items: Record<string, { title: string; desc: string }>
     open: string
     close: string
@@ -421,15 +432,14 @@ export type Dict = {
   fashion: {
     eyebrow: string
     title: string
-    lead: string
     intro: string[]
-    statement: string
+    introRole: string
     projectsLabel: string
+    caseLabel: string
     roleLabel: string
     openProject: string
+    readCase: string
     frames: string
-    colourTitle: string
-    colourBody: string
     items: Record<string, {
       title: string
       category: string

@@ -1,9 +1,11 @@
 'use client'
 
+import Image from 'next/image'
 import { AnimatePresence, motion } from 'framer-motion'
 import { CaretLeft, CaretRight, X } from '@phosphor-icons/react'
 import { useCallback, useEffect, useState } from 'react'
 import { createPortal } from 'react-dom'
+import { imgDims } from '../data/content'
 import { useI18n } from '../i18n'
 import { EASE } from '../lib/motion'
 import { cn } from '../lib/utils'
@@ -14,12 +16,15 @@ export interface LightboxItem {
   subtitle?: string
   desc?: string
   startIndex?: number
+  details?: string[]
+  role?: string
+  roleLabel?: string
+  detailsLabel?: string
 }
 
 export function Lightbox({ item, onClose }: { item: LightboxItem; onClose: () => void }) {
   const { t, dir } = useI18n()
   const [index, setIndex] = useState(item.startIndex ?? 0)
-  const [mounted, setMounted] = useState(false)
   const count = item.images.length
   const multiple = count > 1
 
@@ -27,14 +32,6 @@ export function Lightbox({ item, onClose }: { item: LightboxItem; onClose: () =>
     (delta: number) => setIndex((i) => (i + delta + count) % count),
     [count],
   )
-
-  useEffect(() => {
-    setMounted(true)
-  }, [])
-
-  useEffect(() => {
-    setIndex(item.startIndex ?? 0)
-  }, [item])
 
   useEffect(() => {
     const prev = document.body.style.overflow
@@ -54,7 +51,7 @@ export function Lightbox({ item, onClose }: { item: LightboxItem; onClose: () =>
     }
   }, [dir, go, multiple, onClose])
 
-  if (!mounted) return null
+  if (typeof document === 'undefined') return null
 
   return createPortal(
     <motion.div
@@ -98,24 +95,31 @@ export function Lightbox({ item, onClose }: { item: LightboxItem; onClose: () =>
         )}
 
         <AnimatePresence mode="wait" initial={false}>
-          <motion.img
+          <motion.div
             key={item.images[index]}
-            src={item.images[index]}
-            alt={item.title ?? ''}
-            draggable={false}
             initial={{ opacity: 0, scale: 0.97 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.99 }}
             transition={{ duration: 0.35, ease: EASE }}
-            className="pointer-events-none max-h-[min(58vh,520px)] max-w-full select-none rounded-sm object-contain shadow-2xl sm:max-h-[68vh]"
-          />
+            className="pointer-events-none flex max-h-[min(58dvh,520px)] max-w-full select-none items-center justify-center sm:max-h-[68dvh]"
+          >
+            <Image
+              src={item.images[index]}
+              alt={item.title ?? ''}
+              width={imgDims(item.images[index]).width}
+              height={imgDims(item.images[index]).height}
+              sizes="(min-width: 1024px) 80vw, 96vw"
+              draggable={false}
+              className="max-h-[min(58dvh,520px)] h-auto w-auto max-w-full rounded-sm object-contain shadow-2xl sm:max-h-[68dvh]"
+            />
+          </motion.div>
         </AnimatePresence>
 
         {multiple && <NavArrow side="end" dir={dir} label={t.work.next} onClick={() => go(1)} />}
       </div>
 
       {/* Caption + thumbs — above stage, Safari-safe taps */}
-      <div className="relative z-20 shrink-0 bg-ink/95 px-5 pb-5 pt-4 backdrop-blur-md sm:px-8 sm:pb-6 sm:pt-5">
+      <div className="relative z-20 max-h-[48dvh] shrink-0 overflow-y-auto overscroll-contain bg-ink/95 px-5 pb-5 pt-4 backdrop-blur-md sm:max-h-[42dvh] sm:px-8 sm:pb-6 sm:pt-5">
         <div className="mx-auto max-w-3xl text-center">
           {item.subtitle && <p className="eyebrow mb-2 text-accent-soft">{item.subtitle}</p>}
           {item.title && (
@@ -145,12 +149,39 @@ export function Lightbox({ item, onClose }: { item: LightboxItem; onClose: () =>
                       'pressable relative h-14 w-14 shrink-0 touch-manipulation overflow-hidden rounded-sm border transition-[border-color,opacity] duration-200',
                       active ? 'border-accent-soft opacity-100' : 'border-cream/20 opacity-55',
                     )}
-                  >
-                    <img src={img} alt="" draggable={false} className="pointer-events-none h-full w-full object-cover" />
+                    >
+                    <Image
+                      src={img}
+                      alt=""
+                      fill
+                      sizes="56px"
+                      draggable={false}
+                      className="pointer-events-none object-cover"
+                    />
                   </button>
                 )
               })}
             </div>
+          )}
+
+          {(item.details?.length || item.role) && (
+            <details className="group mx-auto mt-5 max-w-[68ch] border-t border-cream/15 pt-4 text-start">
+              <summary className="cursor-pointer list-none font-mono-ui text-xs uppercase tracking-[0.16em] text-accent-soft marker:content-none focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent-soft">
+                <span className="inline-flex items-center gap-2">
+                  <span className="text-lg leading-none transition-transform duration-200 group-open:rotate-45">+</span>
+                  {item.detailsLabel}
+                </span>
+              </summary>
+              <div className="mt-4 space-y-3 text-pretty text-sm leading-relaxed text-cream/72">
+                {item.details?.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+              </div>
+              {item.role && (
+                <div className="mt-6 border-s-2 border-accent-soft ps-4">
+                  {item.roleLabel && <p className="eyebrow text-accent-soft">{item.roleLabel}</p>}
+                  <p className="mt-2 text-sm font-semibold leading-relaxed text-cream">{item.role}</p>
+                </div>
+              )}
+            </details>
           )}
         </div>
       </div>
