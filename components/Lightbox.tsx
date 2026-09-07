@@ -1,7 +1,7 @@
 'use client'
 
 import Image from 'next/image'
-import { AnimatePresence, motion } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { CaretLeft, CaretRight, X } from '@phosphor-icons/react'
 import { useCallback, useEffect, useState } from 'react'
 import { createPortal } from 'react-dom'
@@ -32,6 +32,15 @@ export function Lightbox({ item, onClose }: { item: LightboxItem; onClose: () =>
     (delta: number) => setIndex((i) => (i + delta + count) % count),
     [count],
   )
+
+  // Reopening a different item can reuse this instance while the previous one
+  // is still animating out, which otherwise carries the old — possibly
+  // out-of-range — index over to the new set.
+  const [shownItem, setShownItem] = useState(item)
+  if (shownItem !== item) {
+    setShownItem(item)
+    setIndex(item.startIndex ?? 0)
+  }
 
   useEffect(() => {
     const prev = document.body.style.overflow
@@ -94,26 +103,29 @@ export function Lightbox({ item, onClose }: { item: LightboxItem; onClose: () =>
           <NavArrow side="start" dir={dir} label={t.work.prev} onClick={() => go(-1)} />
         )}
 
-        <AnimatePresence mode="wait" initial={false}>
-          <motion.div
-            key={item.images[index]}
-            initial={{ opacity: 0, scale: 0.97 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.99 }}
-            transition={{ duration: 0.35, ease: EASE }}
-            className="pointer-events-none flex max-h-[min(58dvh,520px)] max-w-full select-none items-center justify-center sm:max-h-[68dvh]"
-          >
-            <Image
-              src={item.images[index]}
-              alt={item.title ?? ''}
-              width={imgDims(item.images[index]).width}
-              height={imgDims(item.images[index]).height}
-              sizes="(min-width: 1024px) 80vw, 96vw"
-              draggable={false}
-              className="max-h-[min(58dvh,520px)] h-auto w-auto max-w-full rounded-sm object-contain shadow-2xl sm:max-h-[68dvh]"
-            />
-          </motion.div>
-        </AnimatePresence>
+        {/*
+         * No AnimatePresence here: nested inside the portal its exit never
+         * completed, so the keyed child was never swapped and the stage stayed
+         * on the first slide. Remounting on key alone keeps the fade-in.
+         */}
+        <motion.div
+          key={item.images[index]}
+          initial={{ opacity: 0, scale: 0.97 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.35, ease: EASE }}
+          className="pointer-events-none flex max-h-[min(58dvh,520px)] max-w-full select-none items-center justify-center sm:max-h-[68dvh]"
+        >
+          <Image
+            src={item.images[index]}
+            alt={item.title ?? ''}
+            width={imgDims(item.images[index]).width}
+            height={imgDims(item.images[index]).height}
+            sizes="(min-width: 1024px) 80vw, 96vw"
+            priority
+            draggable={false}
+            className="max-h-[min(58dvh,520px)] h-auto w-auto max-w-full rounded-sm object-contain shadow-2xl sm:max-h-[68dvh]"
+          />
+        </motion.div>
 
         {multiple && <NavArrow side="end" dir={dir} label={t.work.next} onClick={() => go(1)} />}
       </div>
