@@ -191,6 +191,10 @@ export const en: Dict = {
     close: 'Close',
     prev: 'Previous',
     next: 'Next',
+    zoomIn: 'Zoom in',
+    zoomOut: 'Zoom out',
+    zoomReset: 'Fit to screen',
+    fullscreen: 'Full screen',
   },
 
   fashion: {
@@ -207,6 +211,10 @@ export const en: Dict = {
     roleLabel: 'My role',
     openProject: 'Open case study',
     readCase: 'Read the project notes',
+    notesLabel: 'Project notes',
+    galleryLabel: 'All frames',
+    backLabel: 'All fashion cases',
+    nextCase: 'Next case',
     frames: 'frames',
     items: {
       'grey-botanical-cloak': {
@@ -428,6 +436,10 @@ export type Dict = {
     close: string
     prev: string
     next: string
+    zoomIn: string
+    zoomOut: string
+    zoomReset: string
+    fullscreen: string
   }
   fashion: {
     eyebrow: string
@@ -439,6 +451,10 @@ export type Dict = {
     roleLabel: string
     openProject: string
     readCase: string
+    notesLabel: string
+    galleryLabel: string
+    backLabel: string
+    nextCase: string
     frames: string
     items: Record<string, {
       title: string

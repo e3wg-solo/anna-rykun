@@ -193,6 +193,10 @@ export const it: Dict = {
     close: 'Chiudi',
     prev: 'Precedente',
     next: 'Successiva',
+    zoomIn: 'Ingrandisci',
+    zoomOut: 'Riduci',
+    zoomReset: 'Adatta allo schermo',
+    fullscreen: 'Schermo intero',
   },
 
   fashion: {
@@ -209,6 +213,10 @@ export const it: Dict = {
     roleLabel: 'Il mio ruolo',
     openProject: 'Apri il caso studio',
     readCase: 'Leggi le note del progetto',
+    notesLabel: 'Note di progetto',
+    galleryLabel: 'Tutti gli scatti',
+    backLabel: 'Tutti i casi fashion',
+    nextCase: 'Caso successivo',
     frames: 'immagini',
     items: {
       'grey-botanical-cloak': {

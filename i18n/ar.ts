@@ -189,6 +189,10 @@ export const ar: Dict = {
     close: 'إغلاق',
     prev: 'السابق',
     next: 'التالي',
+    zoomIn: 'تكبير',
+    zoomOut: 'تصغير',
+    zoomReset: 'ملاءمة الشاشة',
+    fullscreen: 'ملء الشاشة',
   },
 
   fashion: {
@@ -205,6 +209,10 @@ export const ar: Dict = {
     roleLabel: 'دوري',
     openProject: 'افتح دراسة الحالة',
     readCase: 'اقرأ ملاحظات المشروع',
+    notesLabel: 'ملاحظات المشروع',
+    galleryLabel: 'كل اللقطات',
+    backLabel: 'كل أعمال الأزياء',
+    nextCase: 'المشروع التالي',
     frames: 'صور',
     items: {
       'grey-botanical-cloak': {

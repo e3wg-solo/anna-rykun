@@ -2,8 +2,16 @@
 
 import Image from 'next/image'
 import { motion } from 'framer-motion'
-import { CaretLeft, CaretRight, X } from '@phosphor-icons/react'
-import { useCallback, useEffect, useState } from 'react'
+import {
+  ArrowsIn,
+  ArrowsOut,
+  CaretLeft,
+  CaretRight,
+  MagnifyingGlassMinus,
+  MagnifyingGlassPlus,
+  X,
+} from '@phosphor-icons/react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 import { createPortal } from 'react-dom'
 import { imgDims } from '../data/content'
 import { useI18n } from '../i18n'
@@ -28,10 +36,48 @@ export function Lightbox({ item, onClose }: { item: LightboxItem; onClose: () =>
   const count = item.images.length
   const multiple = count > 1
 
+  // Documents carry dense tables that are unreadable at fit-to-screen size, so
+  // the stage doubles as a zoom/pan viewer.
+  const [zoom, setZoom] = useState(1)
+  const [offset, setOffset] = useState({ x: 0, y: 0 })
+  const [fullscreen, setFullscreen] = useState(false)
+  const rootRef = useRef<HTMLDivElement>(null)
+  const drag = useRef<{ x: number; y: number; ox: number; oy: number } | null>(null)
+  const zoomed = zoom > 1
+
+  const resetZoom = useCallback(() => {
+    setZoom(1)
+    setOffset({ x: 0, y: 0 })
+  }, [])
+
+  const zoomBy = useCallback((factor: number) => {
+    setZoom((z) => {
+      const next = Math.min(6, Math.max(1, z * factor))
+      if (next === 1) setOffset({ x: 0, y: 0 })
+      return next
+    })
+  }, [])
+
   const go = useCallback(
-    (delta: number) => setIndex((i) => (i + delta + count) % count),
-    [count],
+    (delta: number) => {
+      setIndex((i) => (i + delta + count) % count)
+      resetZoom()
+    },
+    [count, resetZoom],
   )
+
+  const toggleFullscreen = useCallback(() => {
+    const el = rootRef.current
+    if (!el) return
+    if (document.fullscreenElement) void document.exitFullscreen()
+    else void el.requestFullscreen?.()
+  }, [])
+
+  useEffect(() => {
+    const onChange = () => setFullscreen(Boolean(document.fullscreenElement))
+    document.addEventListener('fullscreenchange', onChange)
+    return () => document.removeEventListener('fullscreenchange', onChange)
+  }, [])
 
   // Reopening a different item can reuse this instance while the previous one
   // is still animating out, which otherwise carries the old — possibly
@@ -40,13 +86,19 @@ export function Lightbox({ item, onClose }: { item: LightboxItem; onClose: () =>
   if (shownItem !== item) {
     setShownItem(item)
     setIndex(item.startIndex ?? 0)
+    setZoom(1)
+    setOffset({ x: 0, y: 0 })
   }
 
   useEffect(() => {
     const prev = document.body.style.overflow
     document.body.style.overflow = 'hidden'
     const onKey = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') onClose()
+      // The browser handles Escape for fullscreen; don't also tear down the box.
+      if (e.key === 'Escape' && !document.fullscreenElement) onClose()
+      if (e.key === '+' || e.key === '=') zoomBy(1.4)
+      if (e.key === '-') zoomBy(1 / 1.4)
+      if (e.key === '0') resetZoom()
       if (!multiple) return
       const fwd = dir === 'rtl' ? 'ArrowLeft' : 'ArrowRight'
       const back = dir === 'rtl' ? 'ArrowRight' : 'ArrowLeft'
@@ -58,12 +110,13 @@ export function Lightbox({ item, onClose }: { item: LightboxItem; onClose: () =>
       document.body.style.overflow = prev
       window.removeEventListener('keydown', onKey)
     }
-  }, [dir, go, multiple, onClose])
+  }, [dir, go, multiple, onClose, resetZoom, zoomBy])
 
   if (typeof document === 'undefined') return null
 
   return createPortal(
     <motion.div
+      ref={rootRef}
       className="fixed inset-0 z-[90] flex flex-col bg-ink/90"
       style={{ paddingBottom: 'env(safe-area-inset-bottom)' }}
       initial={{ opacity: 0 }}
@@ -87,14 +140,29 @@ export function Lightbox({ item, onClose }: { item: LightboxItem; onClose: () =>
         <span className="font-mono-ui text-sm text-cream/70">
           {multiple ? `${index + 1} / ${count}` : ''}
         </span>
-        <button
-          type="button"
-          aria-label={t.work.close}
-          onClick={onClose}
-          className="pressable grid h-11 w-11 place-items-center rounded-full border border-cream/20 text-cream touch-manipulation"
-        >
-          <X size={20} weight="regular" />
-        </button>
+
+        <div className="flex items-center gap-2">
+          <ChromeButton label={t.work.zoomOut} onClick={() => zoomBy(1 / 1.4)} disabled={!zoomed}>
+            <MagnifyingGlassMinus size={19} weight="regular" />
+          </ChromeButton>
+          <button
+            type="button"
+            onClick={resetZoom}
+            aria-label={t.work.zoomReset}
+            className="pressable min-w-14 rounded-full border border-cream/20 px-3 py-2.5 font-mono-ui text-xs text-cream/80 tabular-nums touch-manipulation hover:text-cream"
+          >
+            {Math.round(zoom * 100)}%
+          </button>
+          <ChromeButton label={t.work.zoomIn} onClick={() => zoomBy(1.4)} disabled={zoom >= 6}>
+            <MagnifyingGlassPlus size={19} weight="regular" />
+          </ChromeButton>
+          <ChromeButton label={t.work.fullscreen} onClick={toggleFullscreen}>
+            {fullscreen ? <ArrowsIn size={19} weight="regular" /> : <ArrowsOut size={19} weight="regular" />}
+          </ChromeButton>
+          <ChromeButton label={t.work.close} onClick={onClose}>
+            <X size={20} weight="regular" />
+          </ChromeButton>
+        </div>
       </div>
 
       {/* Stage */}
@@ -113,25 +181,53 @@ export function Lightbox({ item, onClose }: { item: LightboxItem; onClose: () =>
           initial={{ opacity: 0, scale: 0.97 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.35, ease: EASE }}
-          className="pointer-events-none flex max-h-[min(58dvh,520px)] max-w-full select-none items-center justify-center sm:max-h-[68dvh]"
+          className={cn(
+            'flex h-full min-h-0 w-full select-none items-center justify-center',
+            zoomed ? 'cursor-grab active:cursor-grabbing' : 'pointer-events-none',
+          )}
+          onDoubleClick={() => (zoomed ? resetZoom() : zoomBy(2.4))}
+          onWheel={(e) => zoomBy(e.deltaY < 0 ? 1.12 : 1 / 1.12)}
+          onPointerDown={(e) => {
+            if (!zoomed) return
+            drag.current = { x: e.clientX, y: e.clientY, ox: offset.x, oy: offset.y }
+            e.currentTarget.setPointerCapture(e.pointerId)
+          }}
+          onPointerMove={(e) => {
+            const d = drag.current
+            if (!d) return
+            setOffset({ x: d.ox + (e.clientX - d.x), y: d.oy + (e.clientY - d.y) })
+          }}
+          onPointerUp={(e) => {
+            drag.current = null
+            e.currentTarget.releasePointerCapture(e.pointerId)
+          }}
         >
-          <Image
-            src={item.images[index]}
-            alt={item.title ?? ''}
-            width={imgDims(item.images[index]).width}
-            height={imgDims(item.images[index]).height}
-            sizes="(min-width: 1024px) 80vw, 96vw"
-            priority
-            draggable={false}
-            className="max-h-[min(58dvh,520px)] h-auto w-auto max-w-full rounded-sm object-contain shadow-2xl sm:max-h-[68dvh]"
-          />
+          {/* Transform sits inside so it never fights the mount animation above. */}
+          <div
+            className="flex h-full w-full items-center justify-center transition-transform duration-200 ease-out"
+            style={{ transform: `translate(${offset.x}px, ${offset.y}px) scale(${zoom})` }}
+          >
+            <Image
+              src={item.images[index]}
+              alt={item.title ?? ''}
+              width={imgDims(item.images[index]).width}
+              height={imgDims(item.images[index]).height}
+              sizes="(min-width: 1024px) 80vw, 96vw"
+              priority
+              draggable={false}
+              className="h-auto max-h-full w-auto max-w-full rounded-sm object-contain shadow-2xl"
+            />
+          </div>
         </motion.div>
 
         {multiple && <NavArrow side="end" dir={dir} label={t.work.next} onClick={() => go(1)} />}
       </div>
 
       {/* Caption + thumbs — above stage, Safari-safe taps */}
-      <div className="relative z-20 max-h-[48dvh] shrink-0 overflow-y-auto overscroll-contain bg-ink/95 px-5 pb-5 pt-4 backdrop-blur-md sm:max-h-[42dvh] sm:px-8 sm:pb-6 sm:pt-5">
+      <div
+        hidden={zoomed}
+        className="relative z-20 max-h-[42dvh] shrink-0 overflow-y-auto overscroll-contain bg-ink/95 px-5 pb-5 pt-4 backdrop-blur-md sm:max-h-[34dvh] sm:px-8 sm:pb-6 sm:pt-5"
+      >
         <div className="mx-auto max-w-3xl text-center">
           {item.subtitle && <p className="eyebrow mb-2 text-accent-soft">{item.subtitle}</p>}
           {item.title && (
@@ -199,6 +295,31 @@ export function Lightbox({ item, onClose }: { item: LightboxItem; onClose: () =>
       </div>
     </motion.div>,
     document.body,
+  )
+}
+
+function ChromeButton({
+  label,
+  onClick,
+  disabled,
+  children,
+}: {
+  label: string
+  onClick: () => void
+  disabled?: boolean
+  children: React.ReactNode
+}) {
+  return (
+    <button
+      type="button"
+      aria-label={label}
+      title={label}
+      onClick={onClick}
+      disabled={disabled}
+      className="pressable grid h-11 w-11 place-items-center rounded-full border border-cream/20 text-cream touch-manipulation disabled:opacity-35"
+    >
+      {children}
+    </button>
   )
 }
 
