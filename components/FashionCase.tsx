@@ -61,22 +61,24 @@ export function FashionCase({ slug }: { slug: string }) {
         </header>
       </div>
 
-      {/* Hero frame — the reason the reader clicked through, so it leads at full width. */}
-      <button
-        type="button"
-        onClick={() => openAt(0)}
-        aria-label={meta?.title}
-        className="group mt-12 block w-full cursor-zoom-in overflow-hidden bg-paper-2"
-      >
-        <Image
-          src={hero}
-          alt={meta?.title ?? slug}
-          {...imgDims(hero)}
-          sizes="100vw"
-          priority
-          className="h-auto w-full object-contain transition-transform duration-700 ease-out group-hover:scale-[1.01]"
-        />
-      </button>
+      {/* Hero frame — capped against the viewport so a tall board cannot run away. */}
+      <div className="mx-auto mt-12 max-w-[1400px] px-5 sm:px-8">
+        <button
+          type="button"
+          onClick={() => openAt(0)}
+          aria-label={meta?.title}
+          className="group flex w-full cursor-zoom-in items-center justify-center overflow-hidden rounded-sm border border-line bg-paper-2 p-2 sm:p-4"
+        >
+          <Image
+            src={hero}
+            alt={meta?.title ?? slug}
+            {...imgDims(hero)}
+            sizes="(min-width: 1440px) 1400px, 100vw"
+            priority
+            className="h-auto max-h-[72dvh] w-auto max-w-full object-contain transition-transform duration-700 ease-out group-hover:scale-[1.01]"
+          />
+        </button>
+      </div>
 
       <div className="mx-auto mt-16 max-w-[1400px] px-5 sm:px-8">
         <div className="grid gap-10 lg:grid-cols-12 lg:gap-16">
@@ -108,14 +110,14 @@ export function FashionCase({ slug }: { slug: string }) {
               type="button"
               onClick={() => openAt(i + 1)}
               aria-label={`${meta?.title} ${i + 2}`}
-              className="group relative cursor-zoom-in overflow-hidden rounded-sm border border-line bg-paper-2"
+              className="group flex cursor-zoom-in items-center justify-center overflow-hidden rounded-sm border border-line bg-paper-2 p-2"
             >
               <Image
                 src={image}
                 alt=""
                 {...imgDims(image)}
                 sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
-                className="h-auto w-full object-contain transition-transform duration-700 ease-out group-hover:scale-[1.02]"
+                className="h-auto max-h-[52dvh] w-auto max-w-full object-contain transition-transform duration-700 ease-out group-hover:scale-[1.02]"
               />
             </button>
           ))}
