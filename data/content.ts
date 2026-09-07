@@ -143,6 +143,9 @@ export const CERT_ITEMS: CertItem[] = [
   { slug: 'safeguarding', images: [], pdfs: certs.safeguarding },
 ]
 
+/** Colour system behind the fashion work — used as the section 05 backdrop. */
+export const COLOUR_SYSTEM: string = fashion['colour-system'][0]
+
 export const STUDENTS: string[] = media.students
 export const PORTRAIT: string = media.portrait
 export const ETA_DESKTOP: string[] = media.projects['english-through-art']
