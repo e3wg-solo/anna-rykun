@@ -19,8 +19,13 @@ export function Fashion() {
          * behind the intro and faded out so the copy keeps its contrast.
          */}
         <div aria-hidden className="pointer-events-none absolute inset-0 -z-10 select-none">
-          <Image src={COLOUR_SYSTEM} alt="" fill sizes="100vw" className="object-cover opacity-30" />
-          <div className="absolute inset-0 bg-gradient-to-b from-paper-3/70 via-paper-3/88 to-paper-3" />
+          {/*
+           * Anchored to the bottom of the chart: the pale plum and grey rows sit
+           * under the heading, keeping the dark display type legible, while the
+           * navy and red rows stay out of the text's way.
+           */}
+          <Image src={COLOUR_SYSTEM} alt="" fill sizes="100vw" className="object-cover object-bottom" />
+          <div className="absolute inset-0 bg-gradient-to-b from-paper-3/35 via-paper-3/30 to-paper-3" />
         </div>
 
         <div className="mx-auto max-w-[1400px] px-5 pb-20 pt-20 sm:px-8 sm:pb-28 sm:pt-28 md:pb-32 md:pt-36">
@@ -37,17 +42,19 @@ export function Fashion() {
             </header>
 
             <div className="lg:col-span-5 lg:pt-16">
-              <div className="space-y-4 text-pretty text-base leading-[1.68] text-ink-soft sm:text-lg">
-                <p>{f.intro[0]}</p>
-                <p className="border-s-2 border-accent bg-paper/70 py-4 pe-4 ps-5 font-medium text-ink shadow-diffuse">
-                  {f.intro[1]}
-                </p>
-                <p>{f.intro[2]}</p>
-              </div>
+              <div className="rounded-sm bg-paper/85 p-6 shadow-diffuse backdrop-blur-sm sm:p-8">
+                <div className="space-y-4 text-pretty text-base leading-[1.68] text-ink-soft sm:text-lg">
+                  <p>{f.intro[0]}</p>
+                  <p className="border-s-2 border-accent bg-paper-2 py-4 pe-4 ps-5 font-medium text-ink">
+                    {f.intro[1]}
+                  </p>
+                  <p>{f.intro[2]}</p>
+                </div>
 
-              <p className="mt-8 border-t border-ink/15 pt-6 text-pretty text-base font-semibold leading-relaxed text-accent sm:text-lg">
-                {f.introRole}
-              </p>
+                <p className="mt-8 border-t border-ink/15 pt-6 text-pretty text-base font-semibold leading-relaxed text-accent sm:text-lg">
+                  {f.introRole}
+                </p>
+              </div>
             </div>
           </div>
         </div>
