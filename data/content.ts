@@ -133,8 +133,8 @@ export interface CertItem {
 export const CERT_ITEMS: CertItem[] = [
   {
     slug: 'ba-diploma',
-    images: [certs['ba-diploma'][0]],
-    pdfs: [certs['ba-diploma'][1]],
+    images: certs['ba-diploma'].filter((f) => !f.endsWith('.pdf')),
+    pdfs: certs['ba-diploma'].filter((f) => f.endsWith('.pdf')),
   },
   { slug: 'feradiz', images: certs.feradiz, pdfs: [] },
   { slug: 'professional-orientation', images: certs['professional-orientation'], pdfs: [] },

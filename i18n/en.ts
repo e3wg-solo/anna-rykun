@@ -312,7 +312,7 @@ export const en: Dict = {
     items: {
       'ba-diploma': {
         title: 'European Diploma Supplement — BA',
-        body: 'Bachelor’s degree in Pedagogical Education, specialising in Fine Arts and English Language · 300 credits.',
+        body: 'Bachelor’s degree in Pedagogical Education, specialising in Fine Arts and English Language · 300 credits. Includes the full academic transcript — 56 subjects, internships and the final state attestation, overall classification excellent.',
         year: '2026',
       },
       feradiz: { title: "Festival of Russian Design “FERADIZ-2025”", body: 'First Prize in Easel Painting.', year: '2025' },

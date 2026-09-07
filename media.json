@@ -135,7 +135,10 @@
   "certificates": {
     "ba-diploma": [
       "/certificates/ba-diploma-supplement-preview.jpg",
-      "/certificates/ba-diploma-supplement.pdf"
+      "/certificates/ba-diploma-scores-1.jpg",
+      "/certificates/ba-diploma-scores-2.jpg",
+      "/certificates/ba-diploma-supplement.pdf",
+      "/certificates/ba-diploma-scores.pdf"
     ],
     "feradiz": [
       "/certificates/feradiz-1.jpg",

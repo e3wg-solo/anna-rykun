@@ -314,7 +314,7 @@ export const it: Dict = {
     items: {
       'ba-diploma': {
         title: 'Supplemento europeo al diploma — Laurea',
-        body: 'Laurea in Scienze dell’educazione, con specializzazione in Belle Arti e Lingua inglese · 300 crediti.',
+        body: 'Laurea in Scienze dell’educazione, con specializzazione in Belle Arti e Lingua inglese · 300 crediti. Include il transcript accademico completo — 56 esami, tirocini e prova finale, valutazione complessiva «eccellente».',
         year: '2026',
       },
       feradiz: { title: 'Festival del Design Russo «FERADIZ-2025»', body: 'Primo Premio nella Pittura da cavalletto.', year: '2025' },
