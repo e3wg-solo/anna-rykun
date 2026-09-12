@@ -171,6 +171,7 @@ export const en: Dict = {
     },
     items: {
       florence: { title: 'Gorgeous Florence', desc: 'The Duomo glowing through Tuscan haze — warm oil on canvas, 50 × 50 cm.' },
+      'eastern-fairy-tale': { title: 'Eastern Fairy Tale', desc: 'A moonlit eastern garden — a resting panther on chequered stone, a peacock by the carved arcade — oil on canvas, 100 × 80 cm.' },
       borgo: { title: 'Borgo, Italy', desc: 'A hillside village beneath a swirling night sky, where Italian light meets acrylic energy.' },
       'moms-image': { title: "Mom's Image", desc: 'A patterned interior portrait in tempera, marker and acrylic.' },
       camogli: { title: 'Camogli, Liguria', desc: 'The pastel harbour of the Ligurian coast, framed and painted in oil.' },

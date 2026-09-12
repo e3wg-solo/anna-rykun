@@ -173,6 +173,7 @@ export const it: Dict = {
     },
     items: {
       florence: { title: 'Splendida Firenze', desc: 'Il Duomo che brilla nella foschia toscana — olio caldo su tela, 50 × 50 cm.' },
+      'eastern-fairy-tale': { title: 'Fiaba orientale', desc: 'Un giardino orientale al chiaro di luna — una pantera in riposo sulla pietra a scacchi, un pavone accanto al portico scolpito — olio su tela, 100 × 80 cm.' },
       borgo: { title: 'Borgo, Italia', desc: "Un borgo collinare sotto un cielo notturno vorticoso, dove la luce italiana incontra l'energia dell'acrilico." },
       'moms-image': { title: 'Ritratto della mamma', desc: 'Un ritratto d’interni ricco di motivi in tempera, pennarello e acrilico.' },
       camogli: { title: 'Camogli, Liguria', desc: 'Il porto pastello della costa ligure, incorniciato e dipinto a olio.' },

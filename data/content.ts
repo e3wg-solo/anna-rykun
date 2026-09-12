@@ -39,6 +39,13 @@ export const WORK_GROUPS: WorkGroup[] = [
     key: 'landscapes',
     items: [
       { slug: 'borgo', images: [works.borgo[0], works.borgo[2]], medium: 'acrylic', featured: true },
+      {
+        slug: 'eastern-fairy-tale',
+        images: works['eastern-fairy-tale'],
+        medium: 'oil',
+        size: '100 × 80 cm',
+        featured: true,
+      },
       { slug: 'georgia', images: [works.georgia[1], works.georgia[2]], medium: 'oil', featured: true },
       { slug: 'camogli', images: [works.camogli[1]], medium: 'oil' },
       { slug: 'florence', images: works.florence.slice(0, 3), medium: 'oil', size: '50 × 50 cm' },
